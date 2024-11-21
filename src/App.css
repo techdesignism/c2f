@@ -1,5 +1,26 @@
 @import '~antd/dist/antd.css';
 
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #575757; 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #777777; 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #777777; 
+}
+
 .App {
   text-align: center;
 }
@@ -20,7 +41,7 @@
 }
 
 .ant-layout{
-  background: #fff !important;
+  background: #000 !important;
 }
 
 @font-face {

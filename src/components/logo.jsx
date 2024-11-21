@@ -8,15 +8,7 @@ const Logo = () => {
         <img alt="" src={logo} width={100} /> Convert css style to flutter style
       </div>
       <div>
-        Source code is here
-        <a
-          style={{ padding: 6 }}
-          href="https://github.com/drawcall/c2f"
-          rel="noopener noreferrer"
-          target="_blank"
-        >
-          https://github.com/drawcall/c2f
-        </a>
+        
       </div>
     </div>
   );

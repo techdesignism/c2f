@@ -3,7 +3,20 @@ import Message from "../message/message";
 import parseCssDecls from "./css/parse";
 import parseFlutter from "./flutter/parse";
 
+function adjustColorCode(inputString) {
+  // Regular expression to find "Color(0x????????)" where ???? can be any hexadecimal digits
+  const regex = /Color\(0x([0-9A-Fa-f]{8})\)/g;
+
+  // Replace the found color codes
+  return inputString.replace(regex, function (match, p1) {
+    // Add 'FF' after '0x' and remove the last two digits
+    return `Color(0xFF${p1.slice(0, 6)})`;
+  });
+}
+
 const convert2Flutter = async css => {
+
+
   try {
     const ast = await postcss([
       require("postcss-transform-shortcut")({})
@@ -15,7 +28,8 @@ const convert2Flutter = async css => {
 
     if (flutterStyle !== "") Message.success("Has been converted successfully!");
 
-    return flutterStyle;
+    return adjustColorCode(flutterStyle);
+    
   } catch (err) {
     const msg = dumpLogError(err);
     Message.error(msg);
