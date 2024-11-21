@@ -4,6 +4,9 @@ import { UnControlled as CodeMirror } from "react-codemirror2";
 require("codemirror/lib/codemirror.css");
 require("codemirror/theme/material.css");
 require("codemirror/theme/monokai.css");
+require("codemirror/theme/rubyblue.css");
+require("codemirror/theme/cobalt.css");
+
 require("codemirror/mode/css/css.js");
 require("codemirror/mode/dart/dart.js");
 
@@ -19,7 +22,7 @@ class Coder extends React.Component {
         value={this.props.value || ""}
         options={Object.assign(
           {
-            theme: "monokai",
+            theme: "cobalt",
             tabSize: 2,
             lineNumbers: true
           },
